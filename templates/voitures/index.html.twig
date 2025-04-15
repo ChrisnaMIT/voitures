@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VoituresController!{% endblock %}
+
+{% block body %}
+<h1>Toutes les voitures</h1>
+    <ul>
+        {% for voiture in voitures %}
+        <li><strong>{{ voiture.marque }}</strong> {{ voiture.couleur }}</li>
+        <a href="{{ path('app_voitures_show', {id: voiture.id}) }}"> Voir la voiture</a>
+        {% endfor %}
+
+
+
+
+    </ul>
+{% endblock %}
