@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %} {{ voiture.marque }} {% endblock %}
+
+{% block body %}
+<h1> {{ voiture.marque }}</h1>
+<p> {{ voiture.couleur }}</p>
+<a href="{{ path('app_voitures') }}">retour</a>
+
+<form method="post" action="{{ path('app_voitures_delete', {id: voiture.id}) }}">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ voiture.id) }}">
+    <button type="submit">supprime la voiture</button>
+
+</form>
+
+
+
+
+
+
+
+
+
+{% endblock %}
